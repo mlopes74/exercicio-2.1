@@ -4,6 +4,7 @@
 - **Data:** 14/11/2026.
 - **Diretório:** `exercicio-2.1`.
 - **Formato da sessão:** em cada rodada o agente apresenta todas as decisões que já podem ser tomadas, numeradas e com uma recomendação (➡️). O aluno aceita ("sim") ou decide outra coisa.
+- **Nota de versão:** a sessão foi feita sobre a versão longa da v3, que tinha 49 atores (commit `7757c31`). Os números de itens citados nas perguntas (por exemplo, "TCU 45" ou "papiloscopista 12") seguem a numeração dessa versão. Depois da sessão, a v2, a audit_v2 e a v3 foram condensadas para caber na leitura do avaliador. A nova v3 tem 50 atores e numeração diferente, mas mantém os fatos usados nas decisões. O conteúdo da sessão abaixo não foi alterado.
 - **Rodadas de pergunta e resposta:** 9, com 42 decisões no total. As Rodadas 8 e 9 revisam decisões anteriores e foram feitas sem recomendação do agente.
 
 ---

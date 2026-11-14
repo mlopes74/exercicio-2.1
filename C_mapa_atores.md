@@ -3,7 +3,7 @@
 - **Serviço:** emissão de passaporte comum (tipo comum, território nacional).
 - **Canal:** requerimento, pagamento e agendamento online (gov.br / SINPA), com atendimento presencial em posto de emissão.
 - **Órgão responsável:** Polícia Federal (PF), vinculada ao Ministério da Justiça e Segurança Pública (MJSP).
-- **Fontes:** `B_relatorio_assistente_v3.md`, que é a base de evidências, e as decisões registradas em `C_grill_transcript.md`, citadas abaixo como **R*n*-Q*m*** (Rodada *n*, Questão *m*).
+- **Fontes:** `B_relatorio_assistente_v3.md`, que é a base de evidências (a sessão usou a versão longa, com 49 atores; a versão condensada atual tem 50 atores e numeração diferente, mas não altera os fatos usados), e as decisões registradas em `C_grill_transcript.md`, citadas abaixo como **R*n*-Q*m*** (Rodada *n*, Questão *m*).
 - **Formato:** B, com diagrama mermaid e tabela de atores com matriz RACI por etapa (R1-Q2, R3-Q1).
 
 ## 1. Recorte (R1-Q1)
@@ -173,7 +173,7 @@ flowchart LR
 ## 6. Notas por ator
 
 - **Cidadão requerente:** inclui as variações menor, PcD ou idoso, indígena, urgência e emergência. As variações mudam as regras, não o papel (R2-Q1).
-- **Atendente terceirizado:** contratado pela SR/PF (Contrato nº 19/2022-SR/PF/SP). Faz a triagem, a conferência documental primária e a entrega. A coleta biométrica foi atribuída ao Policial federal do posto (R8-Q1, revisando R4-Q3), mesmo que o contrato da v3 descreva a coleta como atividade do terceirizado. É uma escolha normativa do mapa: dado biométrico é sensível e o ato de identificação fica com o agente público.
+- **Atendente terceirizado:** contratado pela SR/PF (Contrato nº 19/2022-SR/PF/SP). Faz a triagem, a conferência documental primária e a entrega. A coleta biométrica foi atribuída ao Policial federal do posto (R8-Q1, revisando R4-Q3). A v3 descreve o atendimento de balcão como feito por "terceirizados e servidores do PECPF, sob supervisão policial", e o contrato que atribuiria o live scan ao terceirizado foi marcado na v3 como "não aberto / parcial". Atribuir a coleta ao agente público é, portanto, uma escolha normativa do mapa, não um fato documentado: dado biométrico é sensível e o ato de identificação fica com o agente público.
 - **Superintendência Regional da PF (SR/PF):** promovida a ator próprio (R8-Q3, revisando R7-Q3). É o A do agendamento, porque define a capacidade local de vagas (R9-Q1), e é consultada (C) na operação presencial e na entrega por ser a contratante dos terceirizados e gestora dos convênios dos postos (R9-Q2).
 - **Gestão nacional da PF:** continua como A do pagamento (R8-Q2, mantendo R5-Q2), mas passou para C no agendamento, porque mantém o sistema e não define as vagas locais (R9-Q1).
 - **Emissores do pré-serviço:** institutos de identificação, cartórios (notas e RCPN), cartórios eleitorais, juntas de serviço militar e, com R\*, a Polícia Civil (BO de furto ou roubo).
