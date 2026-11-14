@@ -176,6 +176,9 @@ flowchart LR
 | 21 | Defesa de direitos (MPF, DPU, AGU) | Sistema de Justiça (exceção) | Órgão | — | — | — | — | — | C\* | — | — | E6a\* | E6a\* | R2-Q6, R6-Q5, R7-Q1 |
 | 22 | Despachantes e sites de intermediação | Externo não oficial | Empresa | — | — | — | — | — | — | — | — | E2–E4 (informal) | E4 (informal) | R1-Q6, R3-Q4 |
 | 23 | Superintendência Regional da PF (SR/PF) | Retaguarda | Órgão | — | — | — | A | C | — | — | C | E4 | E7 | R8-Q3, R9-Q1, R9-Q2, R9-Q3 |
+| 24 | MRE / Rede consular | Fronteira (fora do escopo) | Órgão / Sistema | — | — | — | — | — | — | — | — | fora da jornada | fora da jornada | R1-Q1, R15-Q1 |
+
+**Total: 24 atores.** São 23 que atuam na jornada e 1 ator de fronteira, o MRE, que aparece no mapa e no diagrama, mas sem letras RACI (R15-Q1).
 
 **Verificação do A único por etapa:**
 - E1: Cidadão. No ramo do menor, Responsáveis legais (A\*). No sub-ramo do alvará, Poder Judiciário (A\*).

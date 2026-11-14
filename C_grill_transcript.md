@@ -171,7 +171,7 @@ Este índice resume a sessão. Cada trecho é **citação literal** da resposta 
 
 ## Encerramento
 
-Todos os ramos da árvore de decisões foram visitados, inclusive as revisões das Rodadas 8 e 9 e o aprofundamento das Rodadas 10 a 15. O mapa final está em [`C_mapa_atores.md`](C_mapa_atores.md), com **23 atores** e um ramo de exceção para o Passaporte de Emergência.
+Todos os ramos da árvore de decisões foram visitados, inclusive as revisões das Rodadas 8 e 9 e o aprofundamento das Rodadas 10 a 15. O mapa final está em [`C_mapa_atores.md`](C_mapa_atores.md), com **24 atores**: 23 que atuam na jornada (os 22 da Rodada 7 mais a SR/PF, Rodada 8) e o MRE como ator de fronteira, sem RACI (Rodada 15). Há também um ramo de exceção para o Passaporte de Emergência.
 
 ---
 
