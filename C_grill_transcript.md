@@ -5,10 +5,32 @@
 - **Diretório:** `exercicio-2.1`.
 - **Formato da sessão:** em cada rodada o agente apresenta todas as decisões que já podem ser tomadas, numeradas e com uma recomendação (➡️). O aluno aceita ("sim") ou decide outra coisa.
 - **Nota de versão:** a sessão foi feita sobre a versão longa da v3, que tinha 49 atores (commit `7757c31`). Os números de itens citados nas perguntas (por exemplo, "TCU 45" ou "papiloscopista 12") seguem a numeração dessa versão. Depois da sessão, a v2, a audit_v2 e a v3 foram condensadas para caber na leitura do avaliador. A nova v3 tem 50 atores e numeração diferente, mas mantém os fatos usados nas decisões. O conteúdo da sessão abaixo não foi alterado.
-- **Rodadas de pergunta e resposta:** 13, com 52 decisões no total.
+- **Rodadas de pergunta e resposta:** 15, com 56 decisões no total.
   - Rodadas 1 a 7: o agente recomenda e o aluno aceita.
   - Rodadas 8 e 9: o aluno revisa decisões anteriores, sem recomendação do agente.
-  - Rodadas 10 a 13: perguntas abertas, respondidas pelo aluno com justificativa própria.
+  - Rodadas 10 a 15: perguntas abertas, respondidas pelo aluno com justificativa própria.
+
+## Índice das rodadas (sumário de navegação)
+
+Este índice resume a sessão. Cada trecho é **citação literal** da resposta do aluno, e a sessão completa vem logo abaixo, sem alterações.
+
+| Rodada | Tema | Resposta do aluno (trecho literal) | Decisão resultante |
+|---|---|---|---|
+| 1 | Recorte, formato, granularidade, evidência, tipologia | "sim para todas" | Aceita as recomendações: recorte (b), Formato B, de 15 a 20 atores, inferidos marcados, camada como categoria |
+| 2 | Agregação dos 49 atores | "sim para todos" | Aceita os agrupamentos propostos |
+| 3 | Lógica da RACI e diagrama | "sim para todos" | Matriz por etapa, sistemas nunca A, controle lateral |
+| 4 | Regras de atribuição | "sim para todos" | Um único A por etapa; E6 dividida em E6a e E6b |
+| 5 | Quem é o A de cada etapa | "sim para todos" | Gestão nacional em E2, E3, E4 e E6b; Delegado em E5, E6a e E7 |
+| 6 | Letras de retaguarda e controle | "sim para todos" | Judiciário A\* em E1; controle com I ou C |
+| 7 | Fechamento da matriz | "sim, concordo" | Matriz com 22 atores aprovada |
+| 8 | Revisão: biometria, pagamento, SR | "Q1: b … / Q2: a … / Q3: b …" | Coleta passa ao policial; SR vira ator |
+| 9 | Letras da SR | "q1 a, q2 b, q3 a" | SR é A em E4 e C em E5 e E7 |
+| 10 | Critério de modelagem e emergência | "uma anotação de ator basta quando a sequência de etapas, os sistemas e a cadeia produtiva permanecem os mesmos" / "a decisão opera em duas camadas (Triagem Operacional + Decisão Formal)" | Critério regra vs. cadeia; decisão em duas camadas |
+| 11 | Aplicação à emergência, triagem e FUNAI | "Passaporte de Emergência → Vira ramo separado substituindo a E6b" / "O Policial do posto não tem competência legal para proferir ato administrativo de indeferimento definitivo" / "a FUNAI NÃO deve entrar como ator autônomo" | Ramo E6b-emg; triagem orienta, não barra; FUNAI nos Emissores |
+| 12 | Executor da personalização local e FUNAI | "R = Policial do posto … A = Delegado, porque a caderneta de emergência em branco é insumo de segurança nacional" / "FUNAI só nos Emissores com nota no ator 2" / "Desistência só como anotação de saída" | E6b-emg com R do Policial e A do Delegado; desistência como *early exit* |
+| 13 | Contingência do SINPA e despachantes | "a Gestão Nacional da PF (DPA/CGPI) é A pela decisão de suspensão/contingência e a DTI (junto ao Serpro) é R" / "Os despachantes devem ficar totalmente fora das colunas RACI" | Contingência como anotação em E2 e E4; despachantes só no diagrama |
+| 14 | LGPD: controlador e Encarregado | "O A pelo tratamento dos dados biométricos na jornada é a Gestão Nacional da PF (DPA/PF)" / "o Encarregado deve sair do agregado 'Órgãos de Controle'" | Encarregado passa para dentro da Gestão nacional; ANPD continua no controle externo |
+| 15 | Fronteira: MRE | "A exclusão do MRE das colunas RACI continua correta … Contudo, no diagrama visual, o MRE deve aparecer como um 'Ator de Fronteira'" | MRE como ator de fronteira, fora da RACI |
 
 ---
 
@@ -530,6 +552,38 @@ A escolha **Q3 (b)** cria decisões novas. Se a Superintendência Regional (SR) 
 
 ---
 
+## Rodada 14 — Dados biométricos e LGPD
+
+**Claude:**
+
+❓ **Q1**: Hoje, a **ANPD** e o **Encarregado de dados da PF** estão agregados em "Órgãos de controle", com I em E5 e E6b. Mas a coleta de digitais e foto é tratamento de **dado pessoal sensível** (LGPD, art. 5º, II). Quem é o **A pelo tratamento desses dados** na jornada: a Gestão nacional da PF, como controladora, o Delegado, que coleta no posto, ou o Encarregado? E o Encarregado deve **sair do agregado** e virar um ator próprio? Por quê?
+
+**Aluno:**
+
+> **Q1 (LGPD — Controlador e Encarregado):** O A pelo tratamento dos dados biométricos na jornada é a Gestão Nacional da PF (DPA/PF), pois o extrato oficial do serviço identifica a Polícia Federal como Controladora e Operadora (quem define a finalidade e os meios do tratamento no SINPA/ABIS), cabendo ao posto apenas a execução material (R) e ao Encarregado o papel de canal de comunicação e conformidade (Art. 41 da LGPD), jamais a decisão de negócio. Quanto à modelagem, o Encarregado deve sair do agregado "Órgãos de Controle" — não para virar uma linha isolada (o que inflaria a matriz), mas para ser alocado como nota/função dentro da própria Gestão Nacional da PF (DPA) (onde está formalmente vinculado), deixando a ANPD junto aos órgãos de controle externo, o que corrige a fusão indevida entre uma função interna da PF e uma autoridade reguladora externa.
+
+**Decisões registradas:**
+- **Tratamento dos dados biométricos (transversal a E5 e E6a):** o **A é a Gestão nacional da PF (DPA/PF)**, como controladora e operadora que define a finalidade e os meios no SINPA e no ABIS. O **posto é R**, pela execução material: o Policial federal do posto faz a coleta (R8-Q1). O **Encarregado** é só canal de comunicação e conformidade (LGPD, Art. 41).
+- **Encarregado:** sai de "Órgãos de controle" e vira **nota e função dentro da Gestão nacional da PF**. A **ANPD** permanece nos Órgãos de controle, como controle externo. Isso **corrige R2-Q6 e R6-Q4**, que tinham fundido uma função interna da PF com uma autoridade reguladora externa.
+
+---
+
+## Rodada 15 — Fronteira do recorte
+
+**Claude:**
+
+❓ **Q1**: Na Rodada 1, a **emissão consular (MRE)** ficou fora do mapa. Pense num brasileiro que **perde o passaporte no exterior**: ele não tem como entrar na jornada da PF. Essa exclusão continua correta pelo seu critério da Rodada 10 (regra vs. cadeia)? Ou o mapa deveria ao menos mostrar o MRE como **fronteira**, ligado por uma seta tracejada? Justifique.
+
+**Aluno:**
+
+> **Rodada 15 — Q1 (Fronteira MRE):** A exclusão do MRE das colunas RACI continua correta pelo critério da Rodada 10 porque a emissão consular não é uma ramificação da jornada da PF, mas outro serviço completo com entrada (e-Consular/SCEDV), autoridade (Consulado) e competência territorial próprios (Art. 5º do Decreto nº 5.978/2006). Contudo, no diagrama visual, o MRE deve aparecer como um "Ator de Fronteira" (caixa externa fora do escopo ligada por seta tracejada ao SINPA/CMB), exatamente para evidenciar dois pontos críticos de arquitetura: (1) para onde vai o brasileiro cujo extravio ou vencimento ocorre no exterior e (2) o compartilhamento de retaguarda, já que o sistema consular consulta a base de impedimentos da PF e utiliza cadernetas produzidas pela mesma Casa da Moeda.
+
+**Decisões registradas:**
+- **MRE / Rede consular:** continua **fora das colunas RACI**, porque é outro serviço completo, com entrada, autoridade e competência territorial próprias (Decreto nº 5.978/2006, Art. 5º). Isso **confirma R1-Q1 com nova justificativa.**
+- **No diagrama:** o MRE entra como **"Ator de fronteira"**, numa caixa externa fora do escopo, com setas tracejadas para o SINPA (consulta a base de impedimentos da PF) e para a Casa da Moeda (mesmas cadernetas). Isso mostra para onde vai o brasileiro que perde o passaporte no exterior e o que as duas cadeias compartilham na retaguarda.
+
+---
+
 ## Encerramento
 
-Todos os ramos da árvore de decisões foram visitados, inclusive as revisões das Rodadas 8 e 9 e o aprofundamento das Rodadas 10 a 13. O mapa final está em [`C_mapa_atores.md`](C_mapa_atores.md), com **23 atores** e um ramo de exceção para o Passaporte de Emergência.
+Todos os ramos da árvore de decisões foram visitados, inclusive as revisões das Rodadas 8 e 9 e o aprofundamento das Rodadas 10 a 15. O mapa final está em [`C_mapa_atores.md`](C_mapa_atores.md), com **23 atores** e um ramo de exceção para o Passaporte de Emergência.

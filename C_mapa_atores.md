@@ -80,6 +80,10 @@ flowchart LR
     DEF["21. Defesa de direitos - MPF, DPU, AGU"]
   end
 
+  subgraph FRONT["Fronteira - fora do escopo"]
+    MRE["MRE / Rede consular - ator de fronteira"]
+  end
+
   subgraph EXT["Externo não oficial"]
     DESP["22. Despachantes e sites de intermediação"]
   end
@@ -123,6 +127,8 @@ flowchart LR
   JUD -.->|"E6a proibição judicial"| ALERT
   DEF -.->|"E6a contesta indeferimento"| DEL
   DESP -.->|"cobra por agendamento gratuito"| CID
+  MRE -.->|"consulta base de impedimentos da PF"| SINPA
+  CMB -.->|"mesmas cadernetas"| MRE
 
   classDef sistema fill:#e8f0fe,stroke:#1a56db;
   classDef controle fill:#f3f4f6,stroke:#6b7280,stroke-dasharray: 4 3;
@@ -134,6 +140,7 @@ flowchart LR
   class JUD,DEF justica;
   class DESP naooficial;
   class CMB inferido;
+  class MRE controle;
 ```
 
 ## 5. Tabela de atores com matriz RACI
@@ -205,7 +212,10 @@ Nas etapas **E2 e E4**, a queda do SINPA paralisa o fluxo do passaporte comum, m
 - **Responsáveis legais:** o ator é focado em representantes do direito de família e civil (pais, tutores e curadores). No caso de indígena não integrado, a **assistência da FUNAI** ocupa a mesma posição estrutural, mas fica registrada só nesta nota e não no nome do ator (R11-Q3, R12-Q2).
 - **Policial federal do posto:** além da coleta biométrica, faz a triagem da emergência e a personalização local da caderneta de emergência (R11-Q2, R12-Q1).
 - **Casa da Moeda:** os fornecedores de chip e policarbonato e o operador logístico estão marcados como **inferidos**. A v3 os classifica como "Inferência lógica / Em aberto" (R1-Q4).
-- **Órgãos de controle:** a atuação do TCU sobre este serviço consta na v3 como inferência institucional (Art. 71 da CF/88), não como acórdão verificado (R1-Q4).
+- **Tratamento de dados biométricos (LGPD, transversal a E5 e E6a):** o **A é a Gestão nacional da PF (DPA/PF)**, como controladora e operadora que define a finalidade e os meios no SINPA e no ABIS. O posto executa a coleta (**R**: Policial federal do posto) (R14-Q1).
+- **Encarregado de dados da PF:** é uma função dentro da **Gestão nacional da PF (DPA)**, e não um ator separado nem parte do controle externo. Atua como canal de comunicação e conformidade (LGPD, Art. 41), sem decisão de negócio (R14-Q1, corrigindo R2-Q6 e R6-Q4).
+- **MRE / Rede consular:** é um **ator de fronteira**, fora das colunas RACI, porque a emissão consular é outro serviço completo, com entrada, autoridade e competência territorial próprias (Decreto nº 5.978/2006, Art. 5º). Aparece no diagrama para mostrar para onde vai o brasileiro que perde o passaporte no exterior e o que as duas cadeias compartilham na retaguarda (impedimentos da PF e cadernetas da CMB) (R15-Q1).
+- **Órgãos de controle:** agregam TCU, CGU e ANPD, todos de controle externo. A atuação do TCU sobre este serviço consta na v3 como inferência institucional (Art. 71 da CF/88), não como acórdão verificado (R1-Q4).
 - **Despachantes:** ficam fora das colunas RACI e aparecem só no diagrama, como ameaça ou fricção externa (R3-Q4, R13-Q2). Alertar o cidadão e reprimir fraudes são ações paralelas de comunicação institucional e de polícia, não etapas da emissão.
 - **Gestão nacional da PF:** monitora sites de intermediação e publica alertas na página de Dúvidas (R13-Q2). Também é A pela contingência do SINPA (R13-Q1).
 - **Ouvidoria PF / Fala.BR:** recebe denúncias sobre sites que simulam o serviço oficial (R13-Q2).
