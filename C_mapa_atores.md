@@ -9,6 +9,7 @@
 ## 1. Recorte (R1-Q1)
 
 - **Entra:** o caminho feliz do adulto e as exceções que trazem atores novos: menor de idade (com sub-ramo de alvará judicial), furto ou roubo do passaporte anterior, impedimento judicial ou indeferimento, e passaporte de emergência.
+- **Critério de modelagem (R10-Q1):** quando muda só a regra de negócio ou quem assina, o caso entra como anotação. Quando muda a sequência, o sistema ou a cadeia produtiva, ele vira ramo próprio. Por isso a **Entrega Urgente** é anotação (taxa adicional e encaixe, mesma topologia), e o **Passaporte de Emergência** é ramo separado (seção 5.1) (R11-Q1).
 - **Fica fora:** a emissão consular no exterior (MRE) e a crise de falta de caderneta ou orçamento. Por consequência, ficam fora também os atores MPO/JEO, Congresso/CMO, FUNAPOL e Idec/Procon (R2-Q6).
 
 ## 2. Etapas da jornada (R3-Q1, R4-Q2)
@@ -23,6 +24,7 @@
 | E6a | Validação e deferimento: biometria, alertas e bases cadastrais, e decisão |
 | E6b | Produção e remessa da caderneta (Casa da Moeda até o posto) |
 | E7 | Entrega e pós-serviço (retirada, avaliação, restituição, manifestações) |
+| E6b-emg | *Só no ramo de emergência:* personalização local da caderneta de emergência no posto, no lugar da E6b (R11-Q1) |
 
 ## 3. Tipologia (R1-Q5, R1-Q6, R7-Q2)
 
@@ -104,6 +106,10 @@ flowchart LR
   GEST -->|"E6b gere contrato 40/2022"| CMB
   CMB -->|"E6b remete caderneta"| POSTO
   ATD -->|"E7 entrega"| CID
+  POL -.->|"emergência: triagem orienta"| DEL
+  DEL -.->|"emergência: decisão formal motivada"| POL
+  POL -.->|"E6b-emg personaliza localmente e entrega"| CID
+  CMB -.->|"caderneta de emergência e solução local"| POL
   CID -->|"E7 avalia ou reclama"| OUV
 
   GEST -.->|"gere canal e taxa"| SINPA
@@ -169,6 +175,25 @@ flowchart LR
 - E2, E3 e E6b: Gestão nacional da PF.
 - E4: Superintendência Regional da PF (R9-Q1).
 - E5, E6a e E7: Delegado da PF.
+- E6b-emg: Delegado da PF (R12-Q1).
+
+### 5.1 Ramo de exceção: Passaporte de Emergência (R10, R11, R12)
+
+| Passo | Policial federal do posto | Delegado da PF | Casa da Moeda | Cidadão requerente | Observação |
+|---|---|---|---|---|---|
+| Triagem da emergência (em E5) | R (orienta) | A (decisão formal) | — | — | A triagem **orienta, mas não barra**. Se o cidadão insiste, o Delegado tem o dever de decidir de forma explícita e motivada (CF/88, Art. 5º, XXXIV, "a"; Lei nº 9.784/1999, Arts. 48 e 50) (R11-Q2). |
+| Validação com dispensa excepcional (E6a) | R | A | — | — | Dispensa de exigências pelo Art. 13, parágrafo único, do Decreto nº 5.978/2006 (R11-Q1). |
+| **E6b-emg:** personalização local no posto | **R** | **A** | — (insumo) | — | A caderneta em branco é insumo de segurança sob guarda da unidade. A gravação exige servidor policial, nunca terceirizado. A baixa do estoque local é responsabilidade do Delegado. A CMB e a solução do Contrato nº 40/2022 são só insumo e suporte (R12-Q1). |
+| Entrega imediata (E7) | R | A | — | R | Não passa pela E6b nem pela logística CMB → posto (R11-Q1). |
+
+- **Desistência:** se o cidadão desiste por consenso após a orientação, o fluxo termina na triagem. Isso é só uma anotação de saída (*early exit*), sem letra RACI (R12-Q3).
+
+### 5.2 Anotação de contingência: queda do SINPA (R13-Q1)
+
+Nas etapas **E2 e E4**, a queda do SINPA paralisa o fluxo do passaporte comum, mas não cria uma cadeia paralela. Por isso ela entra só como anotação, sem ramo próprio:
+- **Gestão nacional da PF (DPA/CGPI):** A pela decisão de suspensão ou contingência.
+- **DTI (dentro da Gestão nacional), com o Serpro:** R pelo restabelecimento técnico. O Serpro está agregado na Cadeia de pagamento (R2-Q3).
+- **Delegado da PF:** no nível local, recebe a documentação de urgência enviada às unidades emissoras.
 
 ## 6. Notas por ator
 
@@ -176,14 +201,19 @@ flowchart LR
 - **Atendente terceirizado:** contratado pela SR/PF (Contrato nº 19/2022-SR/PF/SP). Faz a triagem, a conferência documental primária e a entrega. A coleta biométrica foi atribuída ao Policial federal do posto (R8-Q1, revisando R4-Q3). A v3 descreve o atendimento de balcão como feito por "terceirizados e servidores do PECPF, sob supervisão policial", e o contrato que atribuiria o live scan ao terceirizado foi marcado na v3 como "não aberto / parcial". Atribuir a coleta ao agente público é, portanto, uma escolha normativa do mapa, não um fato documentado: dado biométrico é sensível e o ato de identificação fica com o agente público.
 - **Superintendência Regional da PF (SR/PF):** promovida a ator próprio (R8-Q3, revisando R7-Q3). É o A do agendamento, porque define a capacidade local de vagas (R9-Q1), e é consultada (C) na operação presencial e na entrega por ser a contratante dos terceirizados e gestora dos convênios dos postos (R9-Q2).
 - **Gestão nacional da PF:** continua como A do pagamento (R8-Q2, mantendo R5-Q2), mas passou para C no agendamento, porque mantém o sistema e não define as vagas locais (R9-Q1).
-- **Emissores do pré-serviço:** institutos de identificação, cartórios (notas e RCPN), cartórios eleitorais, juntas de serviço militar e, com R\*, a Polícia Civil (BO de furto ou roubo).
+- **Emissores do pré-serviço:** institutos de identificação, cartórios (notas e RCPN), cartórios eleitorais, juntas de serviço militar, **FUNAI** (RANI e declaração de identidade indígena, R11-Q3) e, com R\*, a Polícia Civil (BO de furto ou roubo).
+- **Responsáveis legais:** o ator é focado em representantes do direito de família e civil (pais, tutores e curadores). No caso de indígena não integrado, a **assistência da FUNAI** ocupa a mesma posição estrutural, mas fica registrada só nesta nota e não no nome do ator (R11-Q3, R12-Q2).
+- **Policial federal do posto:** além da coleta biométrica, faz a triagem da emergência e a personalização local da caderneta de emergência (R11-Q2, R12-Q1).
 - **Casa da Moeda:** os fornecedores de chip e policarbonato e o operador logístico estão marcados como **inferidos**. A v3 os classifica como "Inferência lógica / Em aberto" (R1-Q4).
 - **Órgãos de controle:** a atuação do TCU sobre este serviço consta na v3 como inferência institucional (Art. 71 da CF/88), não como acórdão verificado (R1-Q4).
-- **Despachantes:** não recebem letra RACI, para não ganhar legitimidade formal. A PF emite alertas sobre sites que cobram por um agendamento gratuito (R3-Q4).
+- **Despachantes:** ficam fora das colunas RACI e aparecem só no diagrama, como ameaça ou fricção externa (R3-Q4, R13-Q2). Alertar o cidadão e reprimir fraudes são ações paralelas de comunicação institucional e de polícia, não etapas da emissão.
+- **Gestão nacional da PF:** monitora sites de intermediação e publica alertas na página de Dúvidas (R13-Q2). Também é A pela contingência do SINPA (R13-Q1).
+- **Ouvidoria PF / Fala.BR:** recebe denúncias sobre sites que simulam o serviço oficial (R13-Q2).
 
 ## 7. Principais achados do mapa
 
 1. **Execução em camadas no posto:** o terceirizado faz a triagem, o policial faz a coleta biométrica e o Delegado responde pela etapa, enquanto a SR contrata e dimensiona o posto. A operação presencial envolve quatro atores com papéis distintos, e só um deles decide.
 2. **A responsabilidade não acompanha a cadeia industrial:** a CMB produz (R), mas quem responde ao cidadão é a PF (A da E6b). Isso explica por que crises de caderneta são percebidas como falha da PF.
 3. **O SINPA é o único ator presente de E2 a E7:** é o ponto único de falha da jornada, como mostrou o incidente cibernético de 2024 citado na v3.
-4. **Atores invisíveis com poder de veto:** Judiciário (alvará ou proibição) e sistemas de alerta podem interromper a jornada sem aparecer para o cidadão no fluxo normal.
+4. **Emergência é outra cadeia, não só outra regra:** a personalização local transfere para o posto, ou seja, para o policial e o Delegado, uma etapa que no fluxo normal é industrial e contratual. É por isso que a emergência vira ramo próprio e a urgência não (R10-Q1, R11-Q1, R12-Q1).
+5. **Atores invisíveis com poder de veto:** Judiciário (alvará ou proibição) e sistemas de alerta podem interromper a jornada sem aparecer para o cidadão no fluxo normal.
