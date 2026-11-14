@@ -34,6 +34,149 @@ Este índice resume a sessão. Cada trecho é **citação literal** da resposta 
 
 ---
 
+## Ordem de apresentação
+
+**Atenção:** para facilitar a leitura, as **Rodadas 10 a 15**, que têm as respostas abertas do aluno, aparecem **primeiro**. O **prompt inicial e as Rodadas 1 a 9**, que são o início cronológico da sessão, estão no **Apêndice**, no fim do arquivo. Nenhum texto foi alterado, só a ordem dos blocos. A sequência cronológica real é: prompt inicial → Rodadas 1 a 9 → Rodadas 10 a 15.
+
+---
+
+## Rodada 10 — Passaporte de emergência (perguntas abertas, sem recomendação)
+
+**Contexto:** a partir desta rodada, as perguntas são abertas e o aluno responde com as próprias palavras.
+
+**Claude:**
+
+❓ **Q1**: No passaporte de emergência, a v3 diz que o Delegado pode dispensar requisitos em caráter excepcional (Art. 13, parágrafo único, do Decreto 5.978/2006). Hoje o mapa não tem uma etapa própria para isso. A emergência deve **virar um ramo separado no diagrama**, ou basta uma anotação no Delegado? Por quê?
+
+❓ **Q2**: Na emergência, **quem decide se a situação é de fato uma emergência**: o Delegado sozinho, ou o policial do posto faz uma triagem antes? Descreva como você acha que funciona ou deveria funcionar.
+
+**Aluno:**
+
+> **Q1:** Em modelagem de serviços (Service Blueprint e BPMN), uma anotação de ator basta quando a sequência de etapas, os sistemas e a cadeia produtiva permanecem os mesmos, mudando apenas quem assina ou qual regra de negócio é aplicada (como ocorre na Entrega Urgente, que segue o fluxo industrial normal, apenas com prioridade).
+>
+> **Q2:** Na prática operacional das unidades da PF (UMIG/DELEMIG e PEPs) — e também sob a ótica do melhor desenho de governança administrativa —, a decisão opera em duas camadas (Triagem Operacional + Decisão Formal), e não pelo Delegado isoladamente desde o primeiro contato.
+
+**Decisões registradas:**
+- **Critério de modelagem:** quando muda só a regra ou quem assina, basta uma anotação. Quando muda a sequência, o sistema ou a cadeia produtiva, o caso vira um ramo próprio.
+- **Decisão de emergência:** é feita em duas camadas, com triagem operacional seguida de decisão formal.
+
+---
+
+## Rodada 11 — Aplicando os critérios do aluno
+
+**Claude:**
+
+❓ **Q1 - O seu critério aplicado à emergência**: Segundo a v3, o **passaporte de emergência** usa uma **caderneta diferente**, fornecida pela Casa da Moeda e personalizada **localmente no posto**, fora do fluxo industrial normal (Contrato nº 40/2022). Pelo seu critério, a cadeia produtiva muda. Então a **Entrega Urgente** fica como anotação, e o **Passaporte de Emergência** vira **ramo separado** no diagrama, com uma etapa de "personalização local" no lugar da E6b. É isso? Se não for, o que no seu critério leva a outra conclusão?
+
+❓ **Q2 - Triagem negativa**: Nas duas camadas, o policial do posto faz a **triagem operacional (R)** e o Delegado toma a **decisão formal (A)**. Se a triagem concluir que **não é emergência**, o pedido para ali, ou o cidadão tem direito a que o Delegado decida mesmo assim? A triagem pode **barrar**, ou só **instrui** o pedido para o Delegado?
+
+❓ **Q3 - Indígenas e FUNAI**: Na Rodada 2, o requerente indígena foi agregado ao "Cidadão requerente", e a **FUNAI** desapareceu do mapa. Pela v3, a FUNAI emite a declaração ou identidade indígena e assiste o indígena não integrado. Pelo seu critério da Q1, a FUNAI deve **entrar como ator** ou continuar fora? Por quê?
+
+**Aluno:**
+
+> **Q1:** É exatamente isso. Aplicando com rigor o critério de arquitetura de processos (mudança de regra de negócio vs. mudança de topologia/cadeia produtiva), a conclusão é: Procedimento de Entrega Urgente → Fica como anotação (regra de negócio/SLA): A topologia do fluxo não muda. O cidadão apenas obtém um encaixe no agendamento presencial mediante pagamento da taxa adicional de R$ 77,17 e comprovação da viagem, mas o pedido percorre exatamente as mesmas caixas do diagrama: coleta no posto, validação no SINPA, transmissão à fábrica da Casa da Moeda (E6b), transporte seguro e entrega no posto. Passaporte de Emergência → Vira ramo separado substituindo a E6b por "Personalização Local no Posto": Aqui a cadeia produtiva se bifurca. O pedido não vai para a etapa E6b (produção industrial na CMB e logística de transporte); em vez disso, entra na etapa de "Personalização Local no Posto" (usando a caderneta de emergência pré-fornecida pela CMB sob o Contrato nº 40/2022 e a solução tecnológica local mantida por esse mesmo contrato), além de permitir a dispensa excepcional de exigências documentais na validação (Art. 13, parágrafo único, do Decreto nº 5.978/2006) e ir direto para a entrega imediata.
+>
+> **Q2:** preciso separar a prática informal de balcão (filtro de persuasão) do direito administrativo formal (dever de decidir — Lei nº 9.784/1999): Na prática cotidiana de balcão (Filtro de Orientação): Em 90% dos casos em que não há emergência real (ex.: viagem de turismo sem comprovação de força maior), quando o Policial do posto (R — Responsible) explica que a situação não se enquadra nas hipóteses do Art. 13 (ou oferece a alternativa da Entrega Urgente), o próprio cidadão desiste verbalmente do pedido de emergência ou aceita o fluxo alternativo. Nesses casos de desistência consensual, o fluxo termina ali na triagem. No plano jurídico-formal (Se o cidadão insistir no pedido): O Policial do posto não tem competência legal para proferir ato administrativo de indeferimento definitivo ("barrar" de ofício) se o requerente exigir a análise formal. Pelo Direito de Petição (Art. 5º, XXXIV, "a", da CF/88) e pelos Arts. 48 e 50 da Lei nº 9.784/1999 (Lei do Processo Administrativo Federal), a Administração tem o dever de emitir decisão explícita e motivada por meio da autoridade competente.
+>
+> **Q3:** Aplicando estritamente a mesma régua da Q1 (mudança apenas de regra/documento equivalente vs. criação de nova etapa na cadeia central), a FUNAI NÃO deve entrar como ator autônomo na jornada principal, mas sim integrar o grupo agregado de "Órgãos Emissores de Documentos do Pré-serviço" (junto aos Institutos de Identificação Estaduais/CIN, Cartórios de Registro Civil, TSE e Juntas Militares). A justificativa pelo nosso critério é tripartite: No Pré-serviço (Papel de Emissor Documental): Quando a FUNAI emite o registro administrativo (RANI) ou declaração/documento de identificação indígena, ela cumpre exatamente a mesma função topológica na etapa de Pré-serviço que um Instituto de Identificação Estadual (emissor de RG/CIN) ou um Cartório de Registro Civil (RCPN) cumpre para o cidadão não indígena. Não há uma etapa extra no sistema da PF: há apenas uma regra de equivalência documental no guichê de conferência. No Atendimento Presencial (Papel de Assistência/Tutela): Quando um representante da FUNAI acompanha ou autoriza a emissão para indígena não integrado, ele atua na mesma posição estrutural que o "Responsável Legal / Tutor / Curador" já mapeado para menores de idade ou maiores incapazes. Também aqui muda a regra civil de quem assina a autorização, mas não nasce uma etapa nova no Service Blueprint da Polícia Federal. Parcimônia e Proporcionalidade do Mapa: Criar uma raia exclusiva para a FUNAI violaria a granularidade do modelo (dando a um fluxo de baixíssimo volume estatístico o mesmo peso visual da Casa da Moeda, do Serpro ou do TSE). Por outro lado, apagá-la completamente seria um erro de cobertura documental.
+
+**Decisões registradas:**
+- **Entrega Urgente:** fica como anotação, porque é uma regra de prazo e a topologia não muda.
+- **Passaporte de Emergência:** vira ramo separado, com a **E6b-emg "Personalização local no posto"** no lugar da E6b, dispensa excepcional pelo Art. 13, parágrafo único, e entrega imediata.
+- **Triagem de emergência:** orienta, mas não barra. Se o cidadão desiste por consenso, o fluxo termina na triagem. Se ele insiste, o Delegado tem o dever de decidir de forma explícita e motivada (CF/88, Art. 5º, XXXIV, "a", e Lei nº 9.784/1999, Arts. 48 e 50).
+- **FUNAI:** não é ator autônomo. Entra nos "Emissores de documentos do pré-serviço" e, na assistência ao indígena não integrado, ocupa a posição estrutural do responsável legal.
+
+---
+
+## Rodada 12 — Detalhando o ramo de emergência e a FUNAI
+
+**Claude:**
+
+❓ **Q1 - Quem executa a personalização local**: No novo ramo **E6b-emg**, quem é o **R**: o atendente terceirizado, o policial do posto, ou a própria Casa da Moeda, por meio da solução técnica que ela mantém? E o **A** fica com o Delegado ou com a Gestão nacional da PF, que é dona do contrato com a CMB?
+
+❓ **Q2 - A FUNAI no atendimento**: A FUNAI aparece em dois lugares: como emissora (E1) e na posição de responsável legal (E5). O ator 2 é renomeado para "Responsáveis legais / tutores / FUNAI (assistência)", ou a FUNAI aparece só nos Emissores, com uma nota no ator 2?
+
+❓ **Q3 - Como a triagem aparece na matriz**: O cidadão deve ter algum papel na desistência consensual (por exemplo, R na decisão de desistir), ou a desistência fica só como anotação de "saída da jornada"?
+
+**Aluno:** sim para todos
+
+**Claude:** Desta vez "sim para todos" não fecha as perguntas. Nesta rodada eu não dei recomendação, e cada pergunta tem mais de uma opção, então "sim" não diz qual você escolheu. (...) Basta escolher e dar um motivo curto.
+
+**Aluno:**
+
+> **Q1:** R = Policial do posto (Agente/Escrivão) (com a CMB-solução e caderneta do Contrato nº 40/2022 apenas como insumo/sistema de suporte). A = Delegado, porque a caderneta de emergência em branco é insumo de segurança nacional sob guarda da delegacia: a execução material da gravação local exige servidor policial (jamais terceirizado) e a responsabilidade pelo ato concreto de expedição e baixa do estoque local é da autoridade policial da unidade (enquanto a Gestão Nacional só responde pelo contrato global).
+>
+> **Q2:** FUNAI só nos Emissores com nota no ator 2, porque preserva a pureza conceitual do Ator 2 (focado em representantes do direito de família/civil, como pais, tutores e curadores) e evita inflar o nome do ator na matriz por uma exceção estatística, bastando que a nota no Ator 2 remeta à assistência da FUNAI quando aplicável.
+>
+> **Q3:** Desistência só como anotação de saída, porque na matriz RACI os papéis recaem sobre entregas e etapas ativas do serviço; a desistência voluntária após a orientação na triagem é apenas um evento de encerramento precoce (early exit / drop-off) do fluxo de exceção, e não uma atividade processual que exija atribuição formal de responsabilidade.
+
+**Decisões registradas:**
+- **E6b-emg:** **R = Policial federal do posto** e **A = Delegado da PF**. A Casa da Moeda entra só como fornecedora de insumo e solução de suporte, sem letra nessa etapa.
+- **FUNAI:** só nos Emissores de documentos do pré-serviço, com uma nota no ator 2 (Responsáveis legais).
+- **Desistência na triagem:** só anotação de saída (*early exit*), sem letra RACI.
+
+---
+
+## Rodada 13 — Riscos sistêmicos
+
+**Claude:**
+
+❓ **Q1 - SINPA como ponto único de falha**: Quando o SINPA cai, **quem responde pela continuidade do serviço**: a Gestão nacional da PF, a DTI dentro dela, ou o Delegado de cada posto? E o mapa deve mostrar isso, como anotação ou ramo de contingência, ou fica fora do escopo?
+
+❓ **Q2 - Despachantes**: Algum ator oficial deve ter papel em relação a eles, por exemplo a Gestão nacional da PF como R de "alertar o cidadão" ou a Ouvidoria recebendo as denúncias? Ou eles ficam totalmente fora da matriz, só no diagrama?
+
+**Aluno:**
+
+> **Q1:** No nível sistêmico, a Gestão Nacional da PF (DPA/CGPI) é A pela decisão de suspensão/contingência e a DTI (junto ao Serpro) é R pelo restabelecimento técnico, enquanto no nível local o Delegado do posto assume como A/R apenas para recepcionar a documentação de urgência enviada às unidades emissoras. No mapa de atores, isso deve entrar apenas como anotação de contingência nas etapas digitais (E2/E4), pois a queda do SINPA paralisa a própria produção do passaporte comum (e não cria uma cadeia produtiva paralela, ao contrário da Emergência).
+>
+> **Q2:** Os despachantes devem ficar totalmente fora das colunas RACI da jornada (figurando apenas como ameaça/fricção externa no diagrama), porque "alertar o cidadão" ou "monitorar fraudes" são ações de comunicação institucional e repressão policial paralelas, e não etapas necessárias para emitir um passaporte. Basta registrar uma nota na Gestão Nacional da PF (monitoramento e alertas na página de Dúvidas) e na Ouvidoria/Fala.BR (recebimento de denúncias sobre sites simulados).
+
+**Decisões registradas:**
+- **Contingência do SINPA:** entra como **anotação** em E2 e E4, sem ramo próprio. A **Gestão nacional da PF (DPA/CGPI)** é A pela suspensão ou contingência, e a **DTI**, com o Serpro, é R pelo restabelecimento técnico. Localmente, o **Delegado da PF** recebe a documentação de urgência.
+- **Despachantes:** ficam fora das colunas RACI, só no diagrama, como ameaça externa. Ganham notas na **Gestão nacional da PF** (monitoramento e alertas) e na **Ouvidoria PF / Fala.BR** (denúncias de sites simulados).
+
+---
+
+## Rodada 14 — Dados biométricos e LGPD
+
+**Claude:**
+
+❓ **Q1**: Hoje, a **ANPD** e o **Encarregado de dados da PF** estão agregados em "Órgãos de controle", com I em E5 e E6b. Mas a coleta de digitais e foto é tratamento de **dado pessoal sensível** (LGPD, art. 5º, II). Quem é o **A pelo tratamento desses dados** na jornada: a Gestão nacional da PF, como controladora, o Delegado, que coleta no posto, ou o Encarregado? E o Encarregado deve **sair do agregado** e virar um ator próprio? Por quê?
+
+**Aluno:**
+
+> **Q1 (LGPD — Controlador e Encarregado):** O A pelo tratamento dos dados biométricos na jornada é a Gestão Nacional da PF (DPA/PF), pois o extrato oficial do serviço identifica a Polícia Federal como Controladora e Operadora (quem define a finalidade e os meios do tratamento no SINPA/ABIS), cabendo ao posto apenas a execução material (R) e ao Encarregado o papel de canal de comunicação e conformidade (Art. 41 da LGPD), jamais a decisão de negócio. Quanto à modelagem, o Encarregado deve sair do agregado "Órgãos de Controle" — não para virar uma linha isolada (o que inflaria a matriz), mas para ser alocado como nota/função dentro da própria Gestão Nacional da PF (DPA) (onde está formalmente vinculado), deixando a ANPD junto aos órgãos de controle externo, o que corrige a fusão indevida entre uma função interna da PF e uma autoridade reguladora externa.
+
+**Decisões registradas:**
+- **Tratamento dos dados biométricos (transversal a E5 e E6a):** o **A é a Gestão nacional da PF (DPA/PF)**, como controladora e operadora que define a finalidade e os meios no SINPA e no ABIS. O **posto é R**, pela execução material: o Policial federal do posto faz a coleta (R8-Q1). O **Encarregado** é só canal de comunicação e conformidade (LGPD, Art. 41).
+- **Encarregado:** sai de "Órgãos de controle" e vira **nota e função dentro da Gestão nacional da PF**. A **ANPD** permanece nos Órgãos de controle, como controle externo. Isso **corrige R2-Q6 e R6-Q4**, que tinham fundido uma função interna da PF com uma autoridade reguladora externa.
+
+---
+
+## Rodada 15 — Fronteira do recorte
+
+**Claude:**
+
+❓ **Q1**: Na Rodada 1, a **emissão consular (MRE)** ficou fora do mapa. Pense num brasileiro que **perde o passaporte no exterior**: ele não tem como entrar na jornada da PF. Essa exclusão continua correta pelo seu critério da Rodada 10 (regra vs. cadeia)? Ou o mapa deveria ao menos mostrar o MRE como **fronteira**, ligado por uma seta tracejada? Justifique.
+
+**Aluno:**
+
+> **Rodada 15 — Q1 (Fronteira MRE):** A exclusão do MRE das colunas RACI continua correta pelo critério da Rodada 10 porque a emissão consular não é uma ramificação da jornada da PF, mas outro serviço completo com entrada (e-Consular/SCEDV), autoridade (Consulado) e competência territorial próprios (Art. 5º do Decreto nº 5.978/2006). Contudo, no diagrama visual, o MRE deve aparecer como um "Ator de Fronteira" (caixa externa fora do escopo ligada por seta tracejada ao SINPA/CMB), exatamente para evidenciar dois pontos críticos de arquitetura: (1) para onde vai o brasileiro cujo extravio ou vencimento ocorre no exterior e (2) o compartilhamento de retaguarda, já que o sistema consular consulta a base de impedimentos da PF e utiliza cadernetas produzidas pela mesma Casa da Moeda.
+
+**Decisões registradas:**
+- **MRE / Rede consular:** continua **fora das colunas RACI**, porque é outro serviço completo, com entrada, autoridade e competência territorial próprias (Decreto nº 5.978/2006, Art. 5º). Isso **confirma R1-Q1 com nova justificativa.**
+- **No diagrama:** o MRE entra como **"Ator de fronteira"**, numa caixa externa fora do escopo, com setas tracejadas para o SINPA (consulta a base de impedimentos da PF) e para a Casa da Moeda (mesmas cadernetas). Isso mostra para onde vai o brasileiro que perde o passaporte no exterior e o que as duas cadeias compartilham na retaguarda.
+
+---
+
+## Encerramento
+
+Todos os ramos da árvore de decisões foram visitados, inclusive as revisões das Rodadas 8 e 9 e o aprofundamento das Rodadas 10 a 15. O mapa final está em [`C_mapa_atores.md`](C_mapa_atores.md), com **23 atores** e um ramo de exceção para o Passaporte de Emergência.
+
+---
+
+# Apêndice — Início cronológico da sessão (prompt inicial e Rodadas 1 a 9)
+
 ## Prompt inicial (aluno)
 
 ```
@@ -452,138 +595,3 @@ A escolha **Q3 (b)** cria decisões novas. Se a Superintendência Regional (SR) 
 - E2, E3 e E6b: Gestão nacional da PF.
 - **E4: Superintendência Regional da PF.**
 - E5, E6a e E7: Delegado da PF.
-
----
-
-## Rodada 10 — Passaporte de emergência (perguntas abertas, sem recomendação)
-
-**Contexto:** a partir desta rodada, as perguntas são abertas e o aluno responde com as próprias palavras.
-
-**Claude:**
-
-❓ **Q1**: No passaporte de emergência, a v3 diz que o Delegado pode dispensar requisitos em caráter excepcional (Art. 13, parágrafo único, do Decreto 5.978/2006). Hoje o mapa não tem uma etapa própria para isso. A emergência deve **virar um ramo separado no diagrama**, ou basta uma anotação no Delegado? Por quê?
-
-❓ **Q2**: Na emergência, **quem decide se a situação é de fato uma emergência**: o Delegado sozinho, ou o policial do posto faz uma triagem antes? Descreva como você acha que funciona ou deveria funcionar.
-
-**Aluno:**
-
-> **Q1:** Em modelagem de serviços (Service Blueprint e BPMN), uma anotação de ator basta quando a sequência de etapas, os sistemas e a cadeia produtiva permanecem os mesmos, mudando apenas quem assina ou qual regra de negócio é aplicada (como ocorre na Entrega Urgente, que segue o fluxo industrial normal, apenas com prioridade).
->
-> **Q2:** Na prática operacional das unidades da PF (UMIG/DELEMIG e PEPs) — e também sob a ótica do melhor desenho de governança administrativa —, a decisão opera em duas camadas (Triagem Operacional + Decisão Formal), e não pelo Delegado isoladamente desde o primeiro contato.
-
-**Decisões registradas:**
-- **Critério de modelagem:** quando muda só a regra ou quem assina, basta uma anotação. Quando muda a sequência, o sistema ou a cadeia produtiva, o caso vira um ramo próprio.
-- **Decisão de emergência:** é feita em duas camadas, com triagem operacional seguida de decisão formal.
-
----
-
-## Rodada 11 — Aplicando os critérios do aluno
-
-**Claude:**
-
-❓ **Q1 - O seu critério aplicado à emergência**: Segundo a v3, o **passaporte de emergência** usa uma **caderneta diferente**, fornecida pela Casa da Moeda e personalizada **localmente no posto**, fora do fluxo industrial normal (Contrato nº 40/2022). Pelo seu critério, a cadeia produtiva muda. Então a **Entrega Urgente** fica como anotação, e o **Passaporte de Emergência** vira **ramo separado** no diagrama, com uma etapa de "personalização local" no lugar da E6b. É isso? Se não for, o que no seu critério leva a outra conclusão?
-
-❓ **Q2 - Triagem negativa**: Nas duas camadas, o policial do posto faz a **triagem operacional (R)** e o Delegado toma a **decisão formal (A)**. Se a triagem concluir que **não é emergência**, o pedido para ali, ou o cidadão tem direito a que o Delegado decida mesmo assim? A triagem pode **barrar**, ou só **instrui** o pedido para o Delegado?
-
-❓ **Q3 - Indígenas e FUNAI**: Na Rodada 2, o requerente indígena foi agregado ao "Cidadão requerente", e a **FUNAI** desapareceu do mapa. Pela v3, a FUNAI emite a declaração ou identidade indígena e assiste o indígena não integrado. Pelo seu critério da Q1, a FUNAI deve **entrar como ator** ou continuar fora? Por quê?
-
-**Aluno:**
-
-> **Q1:** É exatamente isso. Aplicando com rigor o critério de arquitetura de processos (mudança de regra de negócio vs. mudança de topologia/cadeia produtiva), a conclusão é: Procedimento de Entrega Urgente → Fica como anotação (regra de negócio/SLA): A topologia do fluxo não muda. O cidadão apenas obtém um encaixe no agendamento presencial mediante pagamento da taxa adicional de R$ 77,17 e comprovação da viagem, mas o pedido percorre exatamente as mesmas caixas do diagrama: coleta no posto, validação no SINPA, transmissão à fábrica da Casa da Moeda (E6b), transporte seguro e entrega no posto. Passaporte de Emergência → Vira ramo separado substituindo a E6b por "Personalização Local no Posto": Aqui a cadeia produtiva se bifurca. O pedido não vai para a etapa E6b (produção industrial na CMB e logística de transporte); em vez disso, entra na etapa de "Personalização Local no Posto" (usando a caderneta de emergência pré-fornecida pela CMB sob o Contrato nº 40/2022 e a solução tecnológica local mantida por esse mesmo contrato), além de permitir a dispensa excepcional de exigências documentais na validação (Art. 13, parágrafo único, do Decreto nº 5.978/2006) e ir direto para a entrega imediata.
->
-> **Q2:** preciso separar a prática informal de balcão (filtro de persuasão) do direito administrativo formal (dever de decidir — Lei nº 9.784/1999): Na prática cotidiana de balcão (Filtro de Orientação): Em 90% dos casos em que não há emergência real (ex.: viagem de turismo sem comprovação de força maior), quando o Policial do posto (R — Responsible) explica que a situação não se enquadra nas hipóteses do Art. 13 (ou oferece a alternativa da Entrega Urgente), o próprio cidadão desiste verbalmente do pedido de emergência ou aceita o fluxo alternativo. Nesses casos de desistência consensual, o fluxo termina ali na triagem. No plano jurídico-formal (Se o cidadão insistir no pedido): O Policial do posto não tem competência legal para proferir ato administrativo de indeferimento definitivo ("barrar" de ofício) se o requerente exigir a análise formal. Pelo Direito de Petição (Art. 5º, XXXIV, "a", da CF/88) e pelos Arts. 48 e 50 da Lei nº 9.784/1999 (Lei do Processo Administrativo Federal), a Administração tem o dever de emitir decisão explícita e motivada por meio da autoridade competente.
->
-> **Q3:** Aplicando estritamente a mesma régua da Q1 (mudança apenas de regra/documento equivalente vs. criação de nova etapa na cadeia central), a FUNAI NÃO deve entrar como ator autônomo na jornada principal, mas sim integrar o grupo agregado de "Órgãos Emissores de Documentos do Pré-serviço" (junto aos Institutos de Identificação Estaduais/CIN, Cartórios de Registro Civil, TSE e Juntas Militares). A justificativa pelo nosso critério é tripartite: No Pré-serviço (Papel de Emissor Documental): Quando a FUNAI emite o registro administrativo (RANI) ou declaração/documento de identificação indígena, ela cumpre exatamente a mesma função topológica na etapa de Pré-serviço que um Instituto de Identificação Estadual (emissor de RG/CIN) ou um Cartório de Registro Civil (RCPN) cumpre para o cidadão não indígena. Não há uma etapa extra no sistema da PF: há apenas uma regra de equivalência documental no guichê de conferência. No Atendimento Presencial (Papel de Assistência/Tutela): Quando um representante da FUNAI acompanha ou autoriza a emissão para indígena não integrado, ele atua na mesma posição estrutural que o "Responsável Legal / Tutor / Curador" já mapeado para menores de idade ou maiores incapazes. Também aqui muda a regra civil de quem assina a autorização, mas não nasce uma etapa nova no Service Blueprint da Polícia Federal. Parcimônia e Proporcionalidade do Mapa: Criar uma raia exclusiva para a FUNAI violaria a granularidade do modelo (dando a um fluxo de baixíssimo volume estatístico o mesmo peso visual da Casa da Moeda, do Serpro ou do TSE). Por outro lado, apagá-la completamente seria um erro de cobertura documental.
-
-**Decisões registradas:**
-- **Entrega Urgente:** fica como anotação, porque é uma regra de prazo e a topologia não muda.
-- **Passaporte de Emergência:** vira ramo separado, com a **E6b-emg "Personalização local no posto"** no lugar da E6b, dispensa excepcional pelo Art. 13, parágrafo único, e entrega imediata.
-- **Triagem de emergência:** orienta, mas não barra. Se o cidadão desiste por consenso, o fluxo termina na triagem. Se ele insiste, o Delegado tem o dever de decidir de forma explícita e motivada (CF/88, Art. 5º, XXXIV, "a", e Lei nº 9.784/1999, Arts. 48 e 50).
-- **FUNAI:** não é ator autônomo. Entra nos "Emissores de documentos do pré-serviço" e, na assistência ao indígena não integrado, ocupa a posição estrutural do responsável legal.
-
----
-
-## Rodada 12 — Detalhando o ramo de emergência e a FUNAI
-
-**Claude:**
-
-❓ **Q1 - Quem executa a personalização local**: No novo ramo **E6b-emg**, quem é o **R**: o atendente terceirizado, o policial do posto, ou a própria Casa da Moeda, por meio da solução técnica que ela mantém? E o **A** fica com o Delegado ou com a Gestão nacional da PF, que é dona do contrato com a CMB?
-
-❓ **Q2 - A FUNAI no atendimento**: A FUNAI aparece em dois lugares: como emissora (E1) e na posição de responsável legal (E5). O ator 2 é renomeado para "Responsáveis legais / tutores / FUNAI (assistência)", ou a FUNAI aparece só nos Emissores, com uma nota no ator 2?
-
-❓ **Q3 - Como a triagem aparece na matriz**: O cidadão deve ter algum papel na desistência consensual (por exemplo, R na decisão de desistir), ou a desistência fica só como anotação de "saída da jornada"?
-
-**Aluno:** sim para todos
-
-**Claude:** Desta vez "sim para todos" não fecha as perguntas. Nesta rodada eu não dei recomendação, e cada pergunta tem mais de uma opção, então "sim" não diz qual você escolheu. (...) Basta escolher e dar um motivo curto.
-
-**Aluno:**
-
-> **Q1:** R = Policial do posto (Agente/Escrivão) (com a CMB-solução e caderneta do Contrato nº 40/2022 apenas como insumo/sistema de suporte). A = Delegado, porque a caderneta de emergência em branco é insumo de segurança nacional sob guarda da delegacia: a execução material da gravação local exige servidor policial (jamais terceirizado) e a responsabilidade pelo ato concreto de expedição e baixa do estoque local é da autoridade policial da unidade (enquanto a Gestão Nacional só responde pelo contrato global).
->
-> **Q2:** FUNAI só nos Emissores com nota no ator 2, porque preserva a pureza conceitual do Ator 2 (focado em representantes do direito de família/civil, como pais, tutores e curadores) e evita inflar o nome do ator na matriz por uma exceção estatística, bastando que a nota no Ator 2 remeta à assistência da FUNAI quando aplicável.
->
-> **Q3:** Desistência só como anotação de saída, porque na matriz RACI os papéis recaem sobre entregas e etapas ativas do serviço; a desistência voluntária após a orientação na triagem é apenas um evento de encerramento precoce (early exit / drop-off) do fluxo de exceção, e não uma atividade processual que exija atribuição formal de responsabilidade.
-
-**Decisões registradas:**
-- **E6b-emg:** **R = Policial federal do posto** e **A = Delegado da PF**. A Casa da Moeda entra só como fornecedora de insumo e solução de suporte, sem letra nessa etapa.
-- **FUNAI:** só nos Emissores de documentos do pré-serviço, com uma nota no ator 2 (Responsáveis legais).
-- **Desistência na triagem:** só anotação de saída (*early exit*), sem letra RACI.
-
----
-
-## Rodada 13 — Riscos sistêmicos
-
-**Claude:**
-
-❓ **Q1 - SINPA como ponto único de falha**: Quando o SINPA cai, **quem responde pela continuidade do serviço**: a Gestão nacional da PF, a DTI dentro dela, ou o Delegado de cada posto? E o mapa deve mostrar isso, como anotação ou ramo de contingência, ou fica fora do escopo?
-
-❓ **Q2 - Despachantes**: Algum ator oficial deve ter papel em relação a eles, por exemplo a Gestão nacional da PF como R de "alertar o cidadão" ou a Ouvidoria recebendo as denúncias? Ou eles ficam totalmente fora da matriz, só no diagrama?
-
-**Aluno:**
-
-> **Q1:** No nível sistêmico, a Gestão Nacional da PF (DPA/CGPI) é A pela decisão de suspensão/contingência e a DTI (junto ao Serpro) é R pelo restabelecimento técnico, enquanto no nível local o Delegado do posto assume como A/R apenas para recepcionar a documentação de urgência enviada às unidades emissoras. No mapa de atores, isso deve entrar apenas como anotação de contingência nas etapas digitais (E2/E4), pois a queda do SINPA paralisa a própria produção do passaporte comum (e não cria uma cadeia produtiva paralela, ao contrário da Emergência).
->
-> **Q2:** Os despachantes devem ficar totalmente fora das colunas RACI da jornada (figurando apenas como ameaça/fricção externa no diagrama), porque "alertar o cidadão" ou "monitorar fraudes" são ações de comunicação institucional e repressão policial paralelas, e não etapas necessárias para emitir um passaporte. Basta registrar uma nota na Gestão Nacional da PF (monitoramento e alertas na página de Dúvidas) e na Ouvidoria/Fala.BR (recebimento de denúncias sobre sites simulados).
-
-**Decisões registradas:**
-- **Contingência do SINPA:** entra como **anotação** em E2 e E4, sem ramo próprio. A **Gestão nacional da PF (DPA/CGPI)** é A pela suspensão ou contingência, e a **DTI**, com o Serpro, é R pelo restabelecimento técnico. Localmente, o **Delegado da PF** recebe a documentação de urgência.
-- **Despachantes:** ficam fora das colunas RACI, só no diagrama, como ameaça externa. Ganham notas na **Gestão nacional da PF** (monitoramento e alertas) e na **Ouvidoria PF / Fala.BR** (denúncias de sites simulados).
-
----
-
-## Rodada 14 — Dados biométricos e LGPD
-
-**Claude:**
-
-❓ **Q1**: Hoje, a **ANPD** e o **Encarregado de dados da PF** estão agregados em "Órgãos de controle", com I em E5 e E6b. Mas a coleta de digitais e foto é tratamento de **dado pessoal sensível** (LGPD, art. 5º, II). Quem é o **A pelo tratamento desses dados** na jornada: a Gestão nacional da PF, como controladora, o Delegado, que coleta no posto, ou o Encarregado? E o Encarregado deve **sair do agregado** e virar um ator próprio? Por quê?
-
-**Aluno:**
-
-> **Q1 (LGPD — Controlador e Encarregado):** O A pelo tratamento dos dados biométricos na jornada é a Gestão Nacional da PF (DPA/PF), pois o extrato oficial do serviço identifica a Polícia Federal como Controladora e Operadora (quem define a finalidade e os meios do tratamento no SINPA/ABIS), cabendo ao posto apenas a execução material (R) e ao Encarregado o papel de canal de comunicação e conformidade (Art. 41 da LGPD), jamais a decisão de negócio. Quanto à modelagem, o Encarregado deve sair do agregado "Órgãos de Controle" — não para virar uma linha isolada (o que inflaria a matriz), mas para ser alocado como nota/função dentro da própria Gestão Nacional da PF (DPA) (onde está formalmente vinculado), deixando a ANPD junto aos órgãos de controle externo, o que corrige a fusão indevida entre uma função interna da PF e uma autoridade reguladora externa.
-
-**Decisões registradas:**
-- **Tratamento dos dados biométricos (transversal a E5 e E6a):** o **A é a Gestão nacional da PF (DPA/PF)**, como controladora e operadora que define a finalidade e os meios no SINPA e no ABIS. O **posto é R**, pela execução material: o Policial federal do posto faz a coleta (R8-Q1). O **Encarregado** é só canal de comunicação e conformidade (LGPD, Art. 41).
-- **Encarregado:** sai de "Órgãos de controle" e vira **nota e função dentro da Gestão nacional da PF**. A **ANPD** permanece nos Órgãos de controle, como controle externo. Isso **corrige R2-Q6 e R6-Q4**, que tinham fundido uma função interna da PF com uma autoridade reguladora externa.
-
----
-
-## Rodada 15 — Fronteira do recorte
-
-**Claude:**
-
-❓ **Q1**: Na Rodada 1, a **emissão consular (MRE)** ficou fora do mapa. Pense num brasileiro que **perde o passaporte no exterior**: ele não tem como entrar na jornada da PF. Essa exclusão continua correta pelo seu critério da Rodada 10 (regra vs. cadeia)? Ou o mapa deveria ao menos mostrar o MRE como **fronteira**, ligado por uma seta tracejada? Justifique.
-
-**Aluno:**
-
-> **Rodada 15 — Q1 (Fronteira MRE):** A exclusão do MRE das colunas RACI continua correta pelo critério da Rodada 10 porque a emissão consular não é uma ramificação da jornada da PF, mas outro serviço completo com entrada (e-Consular/SCEDV), autoridade (Consulado) e competência territorial próprios (Art. 5º do Decreto nº 5.978/2006). Contudo, no diagrama visual, o MRE deve aparecer como um "Ator de Fronteira" (caixa externa fora do escopo ligada por seta tracejada ao SINPA/CMB), exatamente para evidenciar dois pontos críticos de arquitetura: (1) para onde vai o brasileiro cujo extravio ou vencimento ocorre no exterior e (2) o compartilhamento de retaguarda, já que o sistema consular consulta a base de impedimentos da PF e utiliza cadernetas produzidas pela mesma Casa da Moeda.
-
-**Decisões registradas:**
-- **MRE / Rede consular:** continua **fora das colunas RACI**, porque é outro serviço completo, com entrada, autoridade e competência territorial próprias (Decreto nº 5.978/2006, Art. 5º). Isso **confirma R1-Q1 com nova justificativa.**
-- **No diagrama:** o MRE entra como **"Ator de fronteira"**, numa caixa externa fora do escopo, com setas tracejadas para o SINPA (consulta a base de impedimentos da PF) e para a Casa da Moeda (mesmas cadernetas). Isso mostra para onde vai o brasileiro que perde o passaporte no exterior e o que as duas cadeias compartilham na retaguarda.
-
----
-
-## Encerramento
-
-Todos os ramos da árvore de decisões foram visitados, inclusive as revisões das Rodadas 8 e 9 e o aprofundamento das Rodadas 10 a 15. O mapa final está em [`C_mapa_atores.md`](C_mapa_atores.md), com **23 atores** e um ramo de exceção para o Passaporte de Emergência.
